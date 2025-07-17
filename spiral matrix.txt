@@ -1,0 +1,86 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int row=sc.nextInt();
+        int col=sc.nextInt();
+        System.out.println("enter elements");
+        int matrix[][]=new int[row][col];
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                matrix[i][j]=sc.nextInt();
+        }
+        }
+        for(int i=0;i<row;i++){
+            for(int j=0;j<col;j++){
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
+        int rowbegin=0;
+        int colbegin=0;
+        int rowend=row-1;
+        int colend=col-1;
+        System.out.println("the clockwise sparse matrix is:");
+        while(rowbegin<=rowend && colbegin<=colend){
+            for(int j=colbegin;j<=colend;j++){
+                System.out.print(matrix[rowbegin][j]+" ");
+            }
+            rowbegin++;
+            for(int i=rowbegin;i<=rowend;i++){
+                System.out.print(matrix[i][colend]+" ");
+            }
+            colend--;
+            if(rowbegin<=rowend){
+                for(int j=colend;j>=colbegin;j--){
+                    System.out.print(matrix[rowend][j]+" ");
+                }
+                
+            }
+            rowend--;
+            if(colbegin<=colend){
+                for(int i=rowend;i>=rowbegin;i--){
+                    System.out.print(matrix[i][colbegin]+" ");
+                }
+            
+            }
+            colbegin++;
+            
+        }
+        System.out.println("the anti-clockwise sparse matrix is:");
+        while(rowbegin<=rowend && colbegin<=colend){
+            if(colbegin<=colend){
+                for(int j=colend;j>=colbegin;j--){
+                System.out.print(matrix[rowbegin][j]+" ");
+            }
+            rowbegin++;
+            for(int i=rowbegin;i<=rowend;i++){
+                System.out.print(matrix[i][colbegin]+" ");
+            }
+            colbegin++;
+            
+                for(int j=colbegin;j<=colend;j++){
+                    System.out.print(matrix[rowend][j]+" ");
+                }
+                
+            }
+            rowend--;
+            if(colbegin<=colend){
+                for(int i=rowend;i>=rowbegin;i--){
+                    System.out.print(matrix[i][colend]+" ");
+                }
+            
+            }
+            colend--;
+            
+        }
+    }
+}//(At a time we can execute only one type because the variables (rowbegin,rowend colbegin,colend are changed))

@@ -1,0 +1,23 @@
+import java.util.*;
+public class Main{
+    public static void printSum(int i, int n, int sum){
+        if(i==n){
+            sum=sum+i;
+            System.out.println(i);
+            System.out.print("sum="+sum);
+            return;
+        }
+        sum+=i;
+        System.out.print(i+" "); 
+        printSum(i+1,n,sum);
+       
+    }
+    public static void main (String[] args) {
+        Scanner sc= new Scanner(System.in);
+       int n=sc.nextInt();
+        int i=1;
+        int sum=0;
+        printSum(i,n,sum);
+    }
+    
+}

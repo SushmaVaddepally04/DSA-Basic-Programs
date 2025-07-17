@@ -1,0 +1,22 @@
+public class Main{
+    public static int power(int x,int n){
+        if(x==0){   //base case
+            return 0;
+        }
+        if(n==0){   //base case2
+            return 1;
+        }
+        if(n%2==0){ //even
+            return power(x,n/2) * power(x,n/2);
+        }
+        else{       //odd
+            return power(x,n/2) * power(x,n/2) * x;
+        }
+    }
+    public static void main(String args[]){
+        int x=2,n=6;
+        int ans=power(x,n);
+        System.out.println(ans);    //stack height logn for power
+        
+    }
+}

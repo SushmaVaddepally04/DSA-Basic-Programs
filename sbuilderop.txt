@@ -1,0 +1,17 @@
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        StringBuffer sb = new StringBuffer("Sony");
+        String name="hii this is Sushma";
+        System.out.println(sb.charAt(0));
+       sb.setCharAt(1,'u');
+        System.out.println(sb);
+        sb.insert(2,'n');
+        System.out.println(sb);
+        sb.delete(3,5);
+        System.out.println(sb);
+        sb.append("o");
+        System.out.println(sb);
+        
+    }
+}
